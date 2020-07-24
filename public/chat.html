@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CotacticHomeWork</title>
+    <style>
+        body {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+        }
+    
+        #chat-container {
+          width: 80%;
+          max-width: 1200px;
+        }
+    
+        #chat-container div {
+          background-color: #CCC;
+          padding: 5px;
+        }
+    
+        #chat-container div:nth-child(2n) {
+          background-color: #FFF;
+        }
+    
+        #send-container {
+          position: fixed;
+          padding-bottom: 30px;
+          bottom: 0;
+          background-color: white;
+          max-width: 1200px;
+          width: 80%;
+          display: flex;
+        }
+    
+        #chat-input {
+          flex-grow: 1;
+        }
+      </style>
+      
+</head>
+<body>  
+    <div id="chat-container"></div>
+    <form id="send-container">
+      <input type="text" id="chat-input"/>
+      <button type="submit" id="send-button">Send</button>
+    </form>
+     
+    
+    <script>"https://code.jquery.com/jquery-3.5.1.min.js"</script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

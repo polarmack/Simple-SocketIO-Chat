@@ -9,7 +9,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 const users = {}
 
 io.on('connection', (socket) => {
-  
   socket.on('send-chat-message', msg => {
     socket.broadcast.emit('broadcast-chat-message', { message: msg , name: users[socket.id] })
  });

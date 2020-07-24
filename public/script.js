@@ -4,7 +4,10 @@ const chatContainer = document.getElementById('chat-container')
 const msgForm = document.getElementById('send-container')
 const msgInput = document.getElementById('chat-input')
 
-const name = prompt('What is your name?')
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+const name = urlParams.get('username')
 appendMessage('You Joined!')
 socket.emit('new-user', name)
 
