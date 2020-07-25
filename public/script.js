@@ -3,6 +3,7 @@ var socket = io();
 const chatContainer = document.getElementById('chat-container')
 const msgForm = document.getElementById('send-container')
 const msgInput = document.getElementById('chat-input')
+const userList = document.getElementById('users');
 
 const queryString = window.location.search;
 console.log(queryString);
@@ -15,8 +16,12 @@ socket.on('broadcast-chat-message',data =>{
     appendMessage(data.name+': '+data.message)
 })
 
-socket.on('user-connected', name =>{
-    appendMessage(name + ' connected')
+socket.on('user-connected', user =>{
+    appendMessage(user.username + ' connected')
+})
+
+socket.on('update-user-online', users =>{
+    appendUsers(users)
 })
 
 socket.on('user-disconnect', name =>{
@@ -33,6 +38,12 @@ msgForm.addEventListener('submit', e => {
 
 function appendMessage(msg){
     const msgElement =document.createElement('div')
-    msgElement.innerText = msg
-    chatContainer.append(msgElement)
+    msgElement.innerHTML = `<p id="text">${msg}</p>`;
+    document.querySelector('#chat-container').appendChild(msgElement)
 }
+
+function appendUsers(users) {
+    userList.innerHTML = `
+      ${users.map(user => `<li>• ${user.username}</li>`).join('')}
+    `;
+  }
