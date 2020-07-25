@@ -38,8 +38,8 @@ a {
 
   #chat-container {
 	width: 100%;
-	overflow-y: scroll;
-	max-height: 400px;
+	overflow-y:auto;
+	height: 400px;
   }
 
   #chat-container div {
@@ -85,7 +85,7 @@ a {
   .container{
 	max-width: 1000px;
 	  background: #fff;
-	margin: 30px auto;
+	margin:  auto;
 	overflow: hidden;
   }
   .row-header{
@@ -98,13 +98,13 @@ a {
 	text-align: center;
   }
   .row-content{
-	height:400px;
+	max-height:550px;
   }
   .sidebar{
 	background: #a5e2a5;
-	  color: #fff;
-	  padding: 20px 20px 60px;
-	overflow-y: scroll;
+	color: #fff;
+	padding: 20px 20px 60px;
+	overflow-y: auto;
   }
 
 

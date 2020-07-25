@@ -13,7 +13,8 @@ appendMessage('You Joined!')
 socket.emit('new-user', name)
 
 socket.on('broadcast-chat-message',data =>{
-    appendMessage(data.name+': '+data.message)
+    appendMessage(data.name+': '+data.message);
+    
 })
 
 socket.on('user-connected', user =>{
@@ -40,6 +41,7 @@ function appendMessage(msg){
     const msgElement =document.createElement('div')
     msgElement.innerHTML = `<p id="text">${msg}</p>`;
     document.querySelector('#chat-container').appendChild(msgElement)
+    chatContainer.scrollTop=chatContainer.scrollHeight;
 }
 
 function appendUsers(users) {
