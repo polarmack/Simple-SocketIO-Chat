@@ -9,13 +9,24 @@ const queryString = window.location.search;
 console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 const name = urlParams.get('username')
-appendMessage('You Joined!')
+
 socket.emit('new-user', name)
 
-socket.on('broadcast-chat-message',data =>{
+socket.on('chat-message',data =>{
     appendMessage(data.name+': '+data.message);
     
 })
+
+socket.on('show-latest-message', data =>{
+    
+    console.log(data);
+    if(data.length){
+        for(var x = 0;x < data.length;x++){
+            appendMessage(data[x].username + ': ' + data[x].chat)
+        }
+    }
+    appendMessage('You Joined!')
+});
 
 socket.on('user-connected', user =>{
     appendMessage(user.username + ' connected')

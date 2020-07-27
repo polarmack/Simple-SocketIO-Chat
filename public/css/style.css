@@ -11,6 +11,7 @@
 	margin: 0;
 	padding: 0;
 }
+/* Chat page */
 
 body {
 	font-family: sans-serif;
@@ -35,21 +36,29 @@ a {
 	border: 0;
 	font-size: 17px;
 }
-
-  #chat-container {
+.row-content{
+	max-height:550px;
+  }
+.sidebar{
+	background: #a5e2a5;
+	color: #fff;
+	padding: 20px 20px 60px;
+	overflow-y: auto;
+  }
+#chat-container {
 	width: 100%;
 	overflow-y:auto;
-	height: 400px;
+	height: 360px;
   }
 
-  #chat-container div {
+#chat-container div {
 	padding: 5px;
 	  margin-bottom: 15px;
 	  background-color: #cef7ce;
 	  border-radius: 5px;
   }
 
-  #text {
+#text {
 	  font-size: 15px;
 	  font-weight: bold;
 	  color: #33853b;
@@ -57,22 +66,22 @@ a {
 	  margin-bottom: 7px;
   }
 
-  .form-container {
+.form-container {
 	padding: 20px 30px;
 	bottom: 0px;
 	background-color: #83d483;
 	align-content: center;
 	}
-  .form-container form{
+.form-container form{
 	display: flex;
   }
-  .form-container #chat-input{
+.form-container #chat-input{
 	font-size: 16px;
 	  padding: 5px;
 	height: 40px;
 	flex: 1
   }
-  .form-container #send-button{
+.form-container #send-button{
 	background-color: #4CAF50; /* Green */
 	border: none;
 	color: white;
@@ -82,13 +91,13 @@ a {
 	height: 40px;
 	font-size: 16px;
   }
-  .container{
+.container{
 	max-width: 1000px;
 	  background: #fff;
 	margin:  auto;
 	overflow: hidden;
   }
-  .row-header{
+.row-header{
 	background: #83d483;
 	  color: #fff;
 	border-top-left-radius: 5px;
@@ -97,15 +106,7 @@ a {
 	display: flex;
 	text-align: center;
   }
-  .row-content{
-	max-height:550px;
-  }
-  .sidebar{
-	background: #a5e2a5;
-	color: #fff;
-	padding: 20px 20px 60px;
-	overflow-y: auto;
-  }
+  
 
 
 /* Join Page */
